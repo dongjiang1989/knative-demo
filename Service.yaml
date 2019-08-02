@@ -5,18 +5,18 @@ metadata:
   namespace: default
 spec:
   template:
-  - metadata:
-	  name: knative-build-demo-v1
+    metadata:
+      name: knative-build-demo-v1
     spec:
-	  container:
-	     - image: docker.io/gswk/knative-build-demo:latest
-		   env:
-		      - name: "dongjiang"
-			    value: "v1"
+      container:
+         - image: docker.io/gswk/knative-build-demo:latest
+           env:
+              - name: "dongjiang"
+                value: "v1"
   traffic:
   - tag: current
     revisionName : knative-build-demo-v1
-	precent: 100
+    precent: 100
   - tag: latest
     latestRevision : true
-	percent: 0
+    percent: 0
