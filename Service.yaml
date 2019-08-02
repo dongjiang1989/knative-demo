@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   template:
-    metadata:
+  - metadata:
 	  name: knative-build-demo-v1
     spec:
 	  container:
