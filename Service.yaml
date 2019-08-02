@@ -4,21 +4,19 @@ metadata:
   name: knative-build-demo
   namespace: default
 spec:
-  runLatest:
-    configuration:
-      build:
-        serviceAccountName: knative-demo
-        source:
-          git:
-            url: https://github.com/dongjiang1989/knative-demo.git
-            revision: master
-        template:
-          name: kaniko
-          arguments:
-          - name: IMAGE
-            value: docker.io/gswk/knative-build-demo:latest
-      revisionTemplate:
-        spec:
-          container:
-            image: docker.io/gswk/knative-build-demo:latest
-            imagePullPolicy: Always
+  template:
+    metadata:
+	  name: knative-build-demo-v1
+    spec:
+	  container:
+	     - image: docker.io/gswk/knative-build-demo:latest
+		   env:
+		      - name: "dongjiang"
+			    value: "v1"
+  traffic:
+  - tag: current
+    revisionName : knative-build-demo-v1
+	precent: 100
+  - tag: latest
+    latestRevision : true
+	percent: 0
