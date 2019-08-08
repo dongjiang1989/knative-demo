@@ -7,4 +7,4 @@ RUN go build
 
 ENTRYPOINT ./knative-build-demo
 
-EXPOSE 57890
+EXPOSE 8080
