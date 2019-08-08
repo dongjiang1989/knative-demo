@@ -11,7 +11,7 @@ func handlePost(rw http.ResponseWriter, req *http.Request) {
 }
 
 func main() {
-	log.Print("Starting server on port 57890...")
+	log.Print("Starting server on port 8080...")
 	http.HandleFunc("/", handlePost)
-	log.Fatal(http.ListenAndServe(":57890", nil))
+	log.Fatal(http.ListenAndServe(":8080", nil))
 }
