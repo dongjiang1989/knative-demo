@@ -12,4 +12,4 @@ spec:
     kind: BuildTemplate # (or ClusterBuildTemplate)
     arguments:
     - name: IMAGE
-      value: docker.io/gswk/knative-build-demo
+      value: docker.io/dongjiang1989/knative-build-demo
